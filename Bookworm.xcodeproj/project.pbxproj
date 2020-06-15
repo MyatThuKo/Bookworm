@@ -14,6 +14,10 @@
 		E2DF51BF2496928F00AEF406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2DF51BE2496928F00AEF406 /* Assets.xcassets */; };
 		E2DF51C22496928F00AEF406 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2DF51C12496928F00AEF406 /* Preview Assets.xcassets */; };
 		E2DF51C52496928F00AEF406 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2DF51C32496928F00AEF406 /* LaunchScreen.storyboard */; };
+		E2DF51CD2496931100AEF406 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DF51CC2496931100AEF406 /* AddBookView.swift */; };
+		E2DF51CF2496973100AEF406 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DF51CE2496973100AEF406 /* RatingView.swift */; };
+		E2DF51D1249699A400AEF406 /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DF51D0249699A400AEF406 /* EmojiRatingView.swift */; };
+		E2DF51D32497F80F00AEF406 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DF51D22497F80F00AEF406 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		E2DF51C12496928F00AEF406 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E2DF51C42496928F00AEF406 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2DF51C62496928F00AEF406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2DF51CC2496931100AEF406 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
+		E2DF51CE2496973100AEF406 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		E2DF51D0249699A400AEF406 /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
+		E2DF51D22497F80F00AEF406 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +69,14 @@
 				E2DF51B52496928C00AEF406 /* AppDelegate.swift */,
 				E2DF51B72496928C00AEF406 /* SceneDelegate.swift */,
 				E2DF51BC2496928C00AEF406 /* ContentView.swift */,
+				E2DF51CE2496973100AEF406 /* RatingView.swift */,
 				E2DF51BE2496928F00AEF406 /* Assets.xcassets */,
+				E2DF51D22497F80F00AEF406 /* DetailView.swift */,
 				E2DF51C32496928F00AEF406 /* LaunchScreen.storyboard */,
 				E2DF51C62496928F00AEF406 /* Info.plist */,
 				E2DF51B92496928C00AEF406 /* Bookworm.xcdatamodeld */,
+				E2DF51CC2496931100AEF406 /* AddBookView.swift */,
+				E2DF51D0249699A400AEF406 /* EmojiRatingView.swift */,
 				E2DF51C02496928F00AEF406 /* Preview Content */,
 			);
 			path = Bookworm;
@@ -150,9 +162,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2DF51B62496928C00AEF406 /* AppDelegate.swift in Sources */,
+				E2DF51D32497F80F00AEF406 /* DetailView.swift in Sources */,
 				E2DF51BB2496928C00AEF406 /* Bookworm.xcdatamodeld in Sources */,
+				E2DF51D1249699A400AEF406 /* EmojiRatingView.swift in Sources */,
 				E2DF51BD2496928C00AEF406 /* ContentView.swift in Sources */,
+				E2DF51CF2496973100AEF406 /* RatingView.swift in Sources */,
 				E2DF51B82496928C00AEF406 /* SceneDelegate.swift in Sources */,
+				E2DF51CD2496931100AEF406 /* AddBookView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
