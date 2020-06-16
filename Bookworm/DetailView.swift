@@ -16,6 +16,16 @@ struct DetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var showingDeleteAlert = false
     
+    var formattedDate: String {
+        if let date = self.book.date {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            return formatter.string(from: date)
+        } else {
+            return "N/A"
+        }
+    }
+    
     var body: some View {
         GeometryReader { geo in
             VStack {
@@ -42,6 +52,9 @@ struct DetailView: View {
                 
                 RatingView(rating: .constant(Int(self.book.rating)))
                     .font(.largeTitle)
+                    .padding()
+                
+                Text("Added Date: \(self.formattedDate)")
                 
                 Spacer()
             }
@@ -62,7 +75,7 @@ struct DetailView: View {
     func deleteBook() {
         moc.delete(book)
         
-         try? self.moc.save()
+        try? self.moc.save()
         
         presentationMode.wrappedValue.dismiss()
     }
@@ -78,6 +91,7 @@ struct DetailView_Previews: PreviewProvider {
         book.genre = "Fantasy"
         book.rating = 4
         book.review = "Test Review"
+        book.date = Date()
         
         return NavigationView {
             DetailView(book: book)

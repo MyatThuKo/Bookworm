@@ -17,11 +17,14 @@ struct AddBookView: View {
     @State private var rating = 3
     @State private var genre = ""
     @State private var review = ""
+    @State private var date = Date()
     
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller",
-    "Self-help"]
+                  "Self-help"]
     
-    let ratings = "" 
+    let ratings = ""
+    
+    @State private var showAlert = false
     
     var body: some View {
         NavigationView {
@@ -42,16 +45,24 @@ struct AddBookView: View {
                     RatingView(rating: $rating)
                     
                     TextField("Write a review", text: $review)
+                    
+                    DatePicker("Today's Date: ", selection: $date, displayedComponents: .date)
                 }
                 
                 Section {
                     Button("Save") {
+                        guard !self.genre.isEmpty else {
+                            self.showAlert.toggle()
+                            return
+                        }
+                        
                         let newBook = Book(context: self.moc)
                         newBook.title = self.title
                         newBook.author = self.author
                         newBook.rating = Int16(self.rating)
                         newBook.genre = self.genre
                         newBook.review = self.review
+                        newBook.date = self.date
                         
                         try? self.moc.save()
                         self.presentationMode.wrappedValue.dismiss()
@@ -59,6 +70,9 @@ struct AddBookView: View {
                 }
             }
             .navigationBarTitle("Add Book")
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Invalid"), message: Text("Please select the genre."), dismissButton: .default(Text("Okay")))
+            }
         }
     }
 }
